@@ -1,171 +1,106 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CESFAM Raúl Sánchez Bañados – Información para la comunidad</title>
-<style>
-  :root {
-    --blue:#0f4c81;
-    --blue-2:#1c5f9a;
-    --light:#f6f9fc;
-    --card:#ffffff;
-    --accent:#19c1c1;
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin:0; font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-    background: linear-gradient(180deg, var(--blue), var(--blue-2));
-    color:#fff;
-  }
-  .container { max-width: 900px; margin: 0 auto; padding: 16px; }
-  header { text-align:center; padding: 28px 12px 18px; }
-  header h1 { margin:6px 0 4px; font-size: clamp(22px,4.8vw,36px); letter-spacing:.3px; }
-  header p { opacity:.95; margin:0; font-size: clamp(14px,2.6vw,18px); }
-  .welcome {
-    margin: 18px auto 26px;
-    background: rgba(255,255,255,.06);
-    border: 1px solid rgba(255,255,255,.12);
-    border-radius: 18px;
-    padding: 22px;
-    text-align:center;
-    box-shadow: 0 6px 20px rgba(0,0,0,.25);
-    animation: fadeIn .8s ease both;
-  }
-  .welcome h2 { margin: 6px 0 8px; font-size: clamp(20px,4.5vw,28px); }
-  .welcome p { margin: 0 0 14px; opacity:.95; }
-  .btn {
-    background: #fff; color: var(--blue);
-    border: none; border-radius: 14px;
-    padding: 12px 18px; font-weight: 700;
-    cursor: pointer; transition: transform .1s ease, box-shadow .2s ease;
-    box-shadow: 0 6px 18px rgba(0,0,0,.22);
-  }
-  .btn:hover { transform: translateY(-1px); }
-  main { padding: 6px 0 40px; }
-  .grid { display:grid; gap:16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
-  .card {
-    background: var(--card); color:#0b2542;
-    border-radius: 16px; padding: 18px;
-    box-shadow: 0 10px 24px rgba(0,0,0,.12);
-    transform: translateY(8px); opacity:0;
-    animation: slideUp .7s ease var(--delay,0s) forwards;
-  }
-  .card h3 { margin: 0 0 8px; display:flex; align-items:center; gap:10px; font-size: 18px; }
-  .pill { display:inline-block; background:#eef6ff; color:#0b2542; border-radius:999px; padding:2px 10px; font-size:12px; margin-left:8px; }
-  ul { padding-left: 18px; margin: 8px 0 0; }
-  li { margin: 6px 0; }
-  .cta-row { display:flex; flex-wrap:wrap; gap:10px; margin-top: 14px; }
-  .cta-row a {
-    text-decoration:none; background: var(--accent); color:#053c3c; font-weight:700;
-    padding:10px 12px; border-radius:12px; display:inline-flex; align-items:center; gap:8px;
-    box-shadow: 0 6px 18px rgba(0,0,0,.15);
-  }
-  footer { text-align:center; opacity:.9; margin-top: 22px; }
-  footer a { color:#fff; font-weight: 700; }
-  .sep { height:1px; background: rgba(255,255,255,.2); margin: 18px 0 8px; }
-  @keyframes fadeIn { from {opacity:0; transform: translateY(6px);} to {opacity:1; transform:none;} }
-  @keyframes slideUp { to { transform:none; opacity:1; } }
-  .logo-bar { display:flex; justify-content:center; gap:14px; opacity:.95; font-weight:700; }
-  .logo-pill { background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.25); padding:6px 10px; border-radius:999px; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CESFAM Raúl Sánchez Bañados – La Ligua</title>
+  <style>
+    body {
+      font-family: "Lato", sans-serif;
+      margin: 0;
+      background-color: #f8fbfd;
+      color: #333;
+    }
+    header {
+      background-color: #0F4C81;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    h2 {
+      color: #0F4C81;
+      border-bottom: 2px solid #0F4C81;
+      padding-bottom: 5px;
+    }
+    .info-box {
+      background-color: #eaf2f8;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 15px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #0F4C81;
+      color: white;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <div class="logo-bar" aria-label="Logo institucional">
-      <div class="logo-pill">CESFAM RAÚL SÁNCHEZ BAÑADOS</div>
+  <header>
+    <h1>CESFAM RAÚL SÁNCHEZ BAÑADOS</h1>
+    <p>La Ligua – Atención Primaria de Salud</p>
+  </header>
+
+  <section id="farmacia">
+    <h2>💊 Farmacia</h2>
+    <div class="info-box">
+      <p><strong>Horario de atención:</strong> Lunes a viernes de 08:00 a 17:00 hrs.</p>
+      <p>No cuenta con horario de colación.</p>
+      <p>Recuerde traer su carnet de identidad y receta vigente.</p>
     </div>
-    <header>
-      <h1>Bienvenidos al CESFAM Raúl Sánchez Bañados</h1>
-      <p>Aquí encontrarás horarios, teléfonos y servicios disponibles.</p>
-    </header>
+  </section>
 
-    <section class="welcome">
-      <h2>Información para la comunidad</h2>
-      <p>Presiona el botón para ver la información completa.</p>
-      <button class="btn" onclick="document.getElementById('info').scrollIntoView({behavior:'smooth'})">Ver información</button>
-    </section>
+  <section id="pnac">
+    <h2>🍼 Programa Nacional de Alimentación Complementaria (PNAC)</h2>
+    <div class="info-box">
+      <p><strong>Horario de atención:</strong> Lunes a viernes de 08:00 a 17:00 hrs.</p>
+      <p>Horario de colación: 13:00 a 14:00 hrs.</p>
+      <p>Diríjase al módulo correspondiente con carnet del beneficiario y control vigente.</p>
+    </div>
+  </section>
 
-    <main id="info" aria-live="polite">
-      <div class="grid">
-        <article class="card" style="--delay:.05s">
-          <h3>💊 Farmacia <span class="pill">Horario</span></h3>
-          <ul>
-            <li>Lunes a viernes: 8:00 a 20:00 hrs. <em>(Tótem recibe hasta las 19:45 hrs.)</em></li>
-            <li>Sábado: 9:00 a 13:00 hrs.</li>
-          </ul>
-          <p style="margin-top:8px"><strong>Recuerde traer su cédula de identidad para retiro de medicamentos.</strong></p>
-        </article>
+  <section id="vacunas">
+    <h2>💉 Vacunatorio</h2>
+    <div class="info-box">
+      <p><strong>Horario de atención:</strong> Lunes a viernes de 08:30 a 16:30 hrs.</p>
+      <p>Horario de colación: 13:00 a 14:00 hrs.</p>
+      <p>Se recomienda asistir con carnet de identidad y carné de vacunas.</p>
+    </div>
+  </section>
 
-        <article class="card" style="--delay:.15s">
-          <h3>🍼 PNAC <span class="pill">Horario</span></h3>
-          <ul>
-            <li>Lunes a viernes: 8:30 a 16:00 hrs.</li>
-            <li><strong>Horario de colación:</strong> 13:00 a 14:00 hrs.</li>
-            <li>⚠️ Censo cerrado el último día del mes.</li>
-            <li><em>Entrega de fórmulas y alimentos según indicación médica vigente.</em></li>
-          </ul>
-        </article>
+  <section id="contacto">
+    <h2>📞 Teléfonos de contacto</h2>
+    <div class="info-box">
+      <p>Puede comunicarse para obtener información o resolver dudas:</p>
+      <ul>
+        <li>📞 CESFAM: +56 33 2 741 576</li>
+        <li>📞 SOME: +56 33 2 741 577</li>
+      </ul>
+    </div>
+  </section>
 
-        <article class="card" style="--delay:.25s">
-          <h3>💉 Vacunas <span class="pill">Horario</span></h3>
-          <ul>
-            <li>Lunes a jueves: 8:30 a 16:00 hrs.</li>
-            <li>Viernes: 8:30 a 15:00 hrs.</li>
-            <li><strong>Horario de colación:</strong> 13:00 a 14:00 hrs.</li>
-            <li>⚠️ Censo cerrado el último día del mes.</li>
-            <li><em>Vacunatorio disponible para esquema nacional y campañas vigentes. Traiga carnet de vacunas del menor o cédula de identidad.</em></li>
-          </ul>
-        </article>
+  <section id="oirs">
+    <h2>🗣️ OIRS – Oficina de Información, Reclamos y Sugerencias</h2>
+    <div class="info-box">
+      <p>Para consultas, felicitaciones o sugerencias puede acceder al formulario oficial del Ministerio de Salud:</p>
+      <p>👉 <a href="https://oirs.minsal.cl/" target="_blank">oirs.minsal.cl</a></p>
+    </div>
+  </section>
 
-        <article class="card" style="--delay:.35s">
-          <h3>☎️ Teléfonos de contacto</h3>
-          <ul>
-            <li>📞 <strong>Sector Verde:</strong> <a href="tel:+56968282933">+56 9 6828 2933</a></li>
-            <li>📞 <strong>Sector Azul:</strong> <a href="tel:+56964879380">+56 9 6487 9380</a></li>
-            <li>📞 <strong>Sector Amarillo:</strong> <a href="tel:+5693467665">+56 9 346 7665</a></li>
-            <li>📞 <strong>OIRS:</strong> <a href="tel:+5697024805">+56 9 702 4805</a></li>
-          </ul>
-          <p style="margin-top:8px"><em>Puede comunicarse con su sector para obtener información o realizar consultas.</em></p>
-          <div class="cta-row">
-            <a href="tel:+56968282933">Llamar Sector Verde</a>
-            <a href="tel:+56964879380">Llamar Sector Azul</a>
-            <a href="tel:+5693467665">Llamar Sector Amarillo</a>
-            <a href="tel:+5697024805">Llamar OIRS</a>
-          </div>
-        </article>
-
-        <article class="card" style="--delay:.45s">
-          <h3>📍 Ubicación</h3>
-          <p>Papudo 655, La Ligua</p>
-          <div class="cta-row">
-            <a href="https://www.google.com/maps/search/?api=1&query=Papudo+655,+La+Ligua" target="_blank" rel="noopener">Abrir en Google Maps</a>
-          </div>
-        </article>
-          <article class="card" style="--delay:.60s">
-          <h3>🧠 Educación en Salud</h3>
-          <p>Encuentre material educativo del CESFAM sobre salud bucal, alimentación saludable y vacunación.</p>
-          <div class="cta-row">
-            <a href="#" onclick="alert('Próximamente disponible. Solicite al administrador actualizar el enlace de material educativo.'); return false;">Ver material educativo</a>
-          </div>
-          <p style="margin-top:8px; font-size:12px; opacity:.7">Para actualizar este botón más adelante, reemplace el atributo <code>href</code> con el enlace a su carpeta o PDF (Drive, sitio municipal, etc.).</p>
-        </article>
-
-        <article class="card" style="--delay:.70s">
-          <h3>📬 Formulario OIRS</h3>
-          <p>Si desea enviar una consulta, reclamo o sugerencia, hágalo a través del formulario oficial del Ministerio de Salud.</p>
-          <div class="cta-row">
-            <a href="https://oirs.minsal.cl/" target="_blank" rel="noopener">Ir al formulario OIRS</a>
-          </div>
-          <p style="margin-top:8px; font-size:12px; opacity:.7">Enlace oficial MINSAL: oirs.minsal.cl</p>
-        </article>
-
-      </div>
-      <div class="sep"></div>
-      <footer>
-        <p>Información actualizada – Octubre 2025 • Diseño institucional</p>
-      </footer>
-    </main>
-  </div>
+  <footer>
+    <p>CESFAM Raúl Sánchez Bañados – Red Comunal APS La Ligua</p>
+    <p>📍 Dirección: Papudo 655, La Ligua</p>
+  </footer>
 </body>
 </html>
