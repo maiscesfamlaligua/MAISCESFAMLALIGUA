@@ -5,6 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CESFAM Raúl Sánchez Bañados – Información para la comunidad</title>
 
+<!-- Fuente (opcional pero recomendado para look más “premium”) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
+
 <style>
   :root {
     --blue:#0f4c81;
@@ -161,34 +166,80 @@
   .update-image img { width:100%; max-width: 420px; filter: drop-shadow(0 30px 40px rgba(0,0,0,.25)); }
   @media (max-width: 768px){ .update-image { text-align:center; } }
 
-  /* ===== Cards con imagen atractiva (OIRS y Portal) ===== */
-  .card-highlight {
+  /* ===== Cards con imagen PRO (OIRS y Portal) ===== */
+  .card-highlight{
     padding: 0;
     overflow: hidden;
+    border: 1px solid rgba(15,76,129,.10);
+    transition: transform .18s ease, box-shadow .2s ease;
   }
-  .card-highlight .media-img {
+  .card-highlight:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 16px 34px rgba(0,0,0,.16);
+  }
+
+  .media-hero{
+    position: relative;
     width: 100%;
-    height: 170px;
-    object-fit: cover;
-    display:block;
+    aspect-ratio: 16 / 9;
+    background: linear-gradient(135deg, rgba(15,76,129,.95), rgba(25,193,193,.55));
+    overflow: hidden;
   }
-  .card-highlight .media-body {
+  .media-hero img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    filter: saturate(1.05) contrast(1.05);
+    transform: scale(1.02);
+  }
+  .media-hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+      radial-gradient(800px 220px at 20% 0%, rgba(255,255,255,.35), transparent 55%),
+      linear-gradient(180deg, rgba(0,0,0,.15), rgba(0,0,0,0) 55%);
+    pointer-events:none;
+  }
+  .media-tag{
+    position:absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 2;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 900;
+    color: #0b2542;
+    background: rgba(255,255,255,.88);
+    border: 1px solid rgba(255,255,255,.55);
+  }
+  .media-fallback{
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:flex-end;
+    padding: 16px;
+    color: rgba(255,255,255,.92);
+    font-weight: 900;
+    letter-spacing: .3px;
+    text-shadow: 0 10px 24px rgba(0,0,0,.35);
+  }
+  .card-highlight .media-body{
     padding: 18px;
   }
-  .card-highlight .media-body h3 {
+  .card-highlight .media-body h3{
     font-size: 19px;
-    margin-bottom: 8px;
+    margin: 0 0 8px;
   }
-  .card-highlight .media-body p {
+  .card-highlight .media-body p{
     margin: 0 0 12px;
   }
-  .card-highlight .cta-row a {
+  .card-highlight .cta-row a{
     background: linear-gradient(90deg, #0f4c81, #1c5f9a);
     color:#fff;
-  }
-  .card-highlight:hover {
-    transform: translateY(-4px);
-    transition: .2s ease;
   }
 </style>
 </head>
@@ -263,9 +314,10 @@
           <ul>
             <li>📞 <strong>Sector Verde:</strong> <a href="tel:+56968282933">+56 9 6828 2933</a></li>
             <li>📞 <strong>Sector Azul:</strong> <a href="tel:+56964879380">+56 9 6487 9380</a></li>
-            <li>📞 <strong>Sector Amarillo:</strong> <a href="tel:+5693467665">+56 9 346 7665</a></li>
-            <li>📞 <strong>Sector Rojo:</strong> <a href="tel:+56964880911">+56 9 64880911</a></li>
-            <li>📞 <strong>OIRS:</strong> <a href="tel:+5697024805">+56 9 702 4805</a></li>
+            <!-- OJO: Sector Amarillo tiene 7 dígitos en tu original; aquí lo dejo como texto hasta confirmar -->
+            <li>📞 <strong>Sector Amarillo:</strong> +56 9 XXX XXXX XX</li>
+            <li>📞 <strong>Sector Rojo:</strong> <a href="tel:+56964880911">+56 9 6488 0911</a></li>
+            <li>📞 <strong>OIRS:</strong> <a href="tel:+5697024805">+56 9 7024 805</a></li>
           </ul>
 
           <p style="margin-top:8px"><em>Puede comunicarse con su sector para obtener información o realizar consultas.</em></p>
@@ -273,7 +325,6 @@
           <div class="cta-row">
             <a href="tel:+56968282933">Llamar Sector Verde</a>
             <a href="tel:+56964879380">Llamar Sector Azul</a>
-            <a href="tel:+5693467665">Llamar Sector Amarillo</a>
             <a href="tel:+56964880911">Llamar Sector Rojo</a>
             <a href="tel:+5697024805">Llamar OIRS</a>
           </div>
@@ -291,11 +342,20 @@
           </div>
         </article>
 
-        <!-- ===== OIRS como card atractiva con imagen ===== -->
+        <!-- ===== OIRS con imagen PRO + fallback ===== -->
         <article class="card card-highlight" style="--delay:.55s">
-          <img class="media-img" src="img/oirs.png" alt="Trámite en Línea OIRS">
+          <div class="media-hero">
+            <span class="media-tag">MINSAL</span>
+
+            <img src="img/oirs.png" alt="Trámite en Línea OIRS"
+                 loading="lazy"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+
+            <div class="media-fallback" style="display:none;">OIRS – Trámite en Línea</div>
+          </div>
+
           <div class="media-body">
-            <h3>📝 Trámite en Línea OIRS <span class="pill">MINSAL</span></h3>
+            <h3>📝 Trámite en Línea OIRS <span class="pill">Oficial</span></h3>
             <p>Envía consultas, reclamos o sugerencias a través del canal oficial.</p>
             <div class="cta-row">
               <a href="https://oirs.minsal.cl/" target="_blank" rel="noopener">Ir a OIRS</a>
@@ -303,11 +363,20 @@
           </div>
         </article>
 
-        <!-- ===== Portal Paciente como card atractiva con imagen ===== -->
+        <!-- ===== Portal Paciente con imagen PRO + fallback ===== -->
         <article class="card card-highlight" style="--delay:.65s">
-          <img class="media-img" src="img/portal.png" alt="Portal Paciente MINSAL">
+          <div class="media-hero">
+            <span class="media-tag">SaludDigital</span>
+
+            <img src="img/portal.png" alt="Portal Paciente MINSAL"
+                 loading="lazy"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+
+            <div class="media-fallback" style="display:none;">Portal Paciente</div>
+          </div>
+
           <div class="media-body">
-            <h3>👤 Portal Paciente <span class="pill">SaludDigital</span></h3>
+            <h3>👤 Portal Paciente <span class="pill">Online</span></h3>
             <p>Accede a información y servicios disponibles en línea.</p>
             <div class="cta-row">
               <a href="https://portalpaciente.minsal.cl/" target="_blank" rel="noopener">Ingresar al Portal</a>
