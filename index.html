@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CESFAM Raúl Sánchez Bañados – Información para la comunidad</title>
 
+<!-- Fuente (opcional pero recomendado para look más “premium”) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
@@ -36,7 +37,7 @@
   header h1 { margin:6px 0 4px; font-size: clamp(22px,4.8vw,36px); letter-spacing:.3px; }
   header p { opacity:.95; margin:0; font-size: clamp(14px,2.6vw,18px); }
 
-  /* ===== HORARIOS DE ATENCIÓN ===== */
+  /* ===== HORARIOS DE ATENCIÓN (bajo el título) ===== */
   .main-schedule {
     background: rgba(255,255,255,.08);
     border: 1px solid rgba(255,255,255,.18);
@@ -161,9 +162,8 @@
     transition: transform .2s ease, box-shadow .2s ease;
   }
   .update-btn:hover { transform: scale(1.04); box-shadow: 0 18px 36px rgba(106,43,191,.45); }
-
   .update-image { flex:1; min-width: 240px; text-align:right; }
-  .update-image svg { width:100%; max-width: 420px; filter: drop-shadow(0 30px 40px rgba(0,0,0,.25)); }
+  .update-image img { width:100%; max-width: 420px; filter: drop-shadow(0 30px 40px rgba(0,0,0,.25)); }
   @media (max-width: 768px){ .update-image { text-align:center; } }
 
   /* ===== Cards con imagen PRO (OIRS y Portal) ===== */
@@ -308,7 +308,7 @@
           </ul>
         </article>
 
-        <!-- ✅ Teléfonos (una sola vez) -->
+        <!-- ✅ Teléfonos: UNA SOLA VEZ + Amarillo clickeable + botones -->
         <article class="card" style="--delay:.35s">
           <h3>☎️ Teléfonos de contacto</h3>
           <ul>
@@ -384,6 +384,7 @@
 
       </div>
 
+      <!-- ✅ Banner: misma estructura, pero con tu foto local -->
       <section class="update-banner-pro" aria-label="Actualiza tus datos de contacto">
         <div class="update-content">
           <div class="update-text">
@@ -399,35 +400,10 @@
             </a>
           </div>
 
-          <!-- ✅ Megáfono embebido (siempre se verá) -->
-          <div class="update-image" aria-hidden="true">
-            <svg viewBox="0 0 700 500" xmlns="http://www.w3.org/2000/svg" role="img">
-              <defs>
-                <linearGradient id="g1" x1="0" x2="1">
-                  <stop offset="0" stop-color="#6a2bbf"/>
-                  <stop offset="1" stop-color="#8d52f2"/>
-                </linearGradient>
-                <linearGradient id="g2" x1="0" x2="1">
-                  <stop offset="0" stop-color="#19c1c1"/>
-                  <stop offset="1" stop-color="#0f4c81"/>
-                </linearGradient>
-              </defs>
-              <!-- fondo suave -->
-              <circle cx="520" cy="120" r="90" fill="rgba(255,255,255,.55)"/>
-              <circle cx="610" cy="230" r="55" fill="rgba(25,193,193,.25)"/>
-              <!-- megáfono -->
-              <path d="M155 290c-18 0-33-15-33-33v-54c0-18 15-33 33-33h68l248-92c16-6 32 6 32 23v286c0 17-16 29-32 23l-248-92h-68z"
-                    fill="url(#g1)"/>
-              <path d="M214 180h42v120h-42c-20 0-36-16-36-36v-48c0-20 16-36 36-36z"
-                    fill="rgba(255,255,255,.75)"/>
-              <path d="M520 138c38 28 62 73 62 124s-24 96-62 124"
-                    fill="none" stroke="url(#g2)" stroke-width="18" stroke-linecap="round"/>
-              <path d="M564 96c58 44 96 113 96 194s-38 150-96 194"
-                    fill="none" stroke="rgba(15,76,129,.35)" stroke-width="14" stroke-linecap="round"/>
-              <!-- manija -->
-              <path d="M170 308l54 132c6 16-6 32-22 32h-28c-10 0-19-6-22-15l-38-99c-4-11 4-22 16-22h40z"
-                    fill="rgba(15,76,129,.25)"/>
-            </svg>
+          <div class="update-image">
+            <!-- 👇 TU IMAGEN LOCAL -->
+            <img src="img/actualiza-datos.png" alt="Actualiza tus datos" loading="lazy"
+                 onerror="this.style.display='none'">
           </div>
         </div>
       </section>
@@ -440,4 +416,4 @@
 
   </div>
 </body>
-</html>  
+</html>
